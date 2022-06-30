@@ -161,5 +161,5 @@ tasks.check.dependsOn tasks.jacocoRootTestReport
 //tasks.jacocoRootTestReport.dependsOn tasks.test
 
 rewrite {
-    activeRecipe("org.openrewrite.java.format.AutoFormat")
+    activeRecipe("org.openrewrite.java.cleanup.CommonStaticAnalysis")
 }
