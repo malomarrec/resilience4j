@@ -5,6 +5,7 @@ plugins {
     id "io.github.gradle-nexus.publish-plugin"  version "1.1.0"
     id "me.champeau.jmh" version "0.6.5"
     id 'idea'
+    id "org.openrewrite.rewrite" version "5.22.2"
 }
 
 apply from: "${rootDir}/libraries.gradle"
@@ -159,3 +160,6 @@ task jacocoRootTestReport(type: JacocoReport) {
 tasks.check.dependsOn tasks.jacocoRootTestReport
 //tasks.jacocoRootTestReport.dependsOn tasks.test
 
+rewrite {
+    activeRecipe("org.openrewrite.java.format.AutoFormat")
+}
